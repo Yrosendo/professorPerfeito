@@ -16,6 +16,10 @@ public class UsuarioController {
 	public String adicionarUsuario() {
 		return "usuario/incluirUsuario";
 	}
+	@RequestMapping("index")
+	public String index() {
+		return "index";
+	}
 
 	@RequestMapping("/usuario/save")
 	public String save(Usuario usuario, @RequestParam("file") MultipartFile foto) {
