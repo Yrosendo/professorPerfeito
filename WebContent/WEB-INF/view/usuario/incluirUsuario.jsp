@@ -21,6 +21,11 @@
 		<p>
 			nome: <br /> <input type="text" name="nome" />
 		</p>
+		<!--  
+		<p>
+			Data de nascimento: <br /> <input type="date" name="dataNascimento" />
+		</p>
+		-->
 		<p>
 			(11 digitos exatos)cpf: <br /> <input type="text" name="cpf" />
 		</p>
