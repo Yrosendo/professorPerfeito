@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity 
@@ -18,9 +20,11 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idusuario;
 	
-	/*
-	private TipoUsuario tipousuario;
-	*/
+	
+	@ManyToOne    
+	@JoinColumn(name = "categoria_id")
+	private TipoUsuario tipousuario; 
+	
 	@Column
 	private String login;
 	
@@ -30,10 +34,10 @@ public class Usuario {
 	@Column
 	private String nome;
 	
-	/*
+	
 	@Column(name = "data_nascimento") 
 	private Date dataNascimento;
-	*/
+	
 	
 	@Column
 	private String cpf;
@@ -68,14 +72,14 @@ public class Usuario {
 	public void setIdusuario(int idusuario) {
 		this.idusuario = idusuario;
 	}
-	/*
+	
 	public TipoUsuario getTipousuario() {
 		return tipousuario;
 	}
 	public void setTipousuario(TipoUsuario tipousuario) {
 		this.tipousuario = tipousuario;
 	}
-	*/
+	
 	public String getLogin() {
 		return login;
 	}
@@ -94,14 +98,14 @@ public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	/*
+	
 	public Date getDataNascimento() {
 		return dataNascimento;
 	}
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	*/
+	
 	public String getCpf() {
 		return cpf;
 	}

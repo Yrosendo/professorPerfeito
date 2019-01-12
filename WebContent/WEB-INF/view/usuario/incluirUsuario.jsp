@@ -1,16 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
 </head>
 <body>
 	<hr>
 	<h3>cadastrar Usuario</h3>
 	<hr>
 	<form action="save" method="post" enctype="multipart/form-data">
+
+		
+			Categoria <br /> <select name="tipousuario">
+				<option value="">Selecione</option>
+				<c:forEach items="${listaTipoUsuario}" var="obj">
+					<option value="${obj.id}">${obj.descricao}</option>
+				</c:forEach>
+			</select>
+		
 		<p>
 			login: <br /> <input type="text" name="login" />
 		</p>
@@ -21,11 +33,11 @@
 		<p>
 			nome: <br /> <input type="text" name="nome" />
 		</p>
-		<!--  
+
 		<p>
-			Data de nascimento: <br /> <input type="date" name="dataNascimento" />
+			Data de nascimento: <br /> <input type="text" name="dataNascimento" />
 		</p>
-		-->
+
 		<p>
 			(11 digitos exatos)cpf: <br /> <input type="text" name="cpf" />
 		</p>

@@ -1,5 +1,7 @@
 package br.com.viking.professor.model;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -15,5 +17,14 @@ public class TipoUsuarioDao {
 		manager.getTransaction().commit();
 		manager.close();
 		factory.close();
+	}
+
+	public List<TipoUsuarioDao> listar() {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
+		EntityManager manager = factory.createEntityManager();
+		List<TipoUsuarioDao> lista = manager.createQuery("FROM TipoUsuario ORDER BY id").getResultList();
+		manager.close();
+		factory.close();
+		return lista;
 	}
 }

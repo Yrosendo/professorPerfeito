@@ -17,9 +17,9 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://127.0.0.1:3306/profPerfeito?useTimezone=true&amp;serverTimezone=UTC" /> <!--Schema-->
-			<property name="javax.persistence.jdbc.user" value="usuarioj" /> <!-- Usuario Banco -->
-			<property name="javax.persistence.jdbc.password" value="headxote" /> <!-- Senha Banco -->
+				value="jdbc:mysql://127.0.0.1:3306/mydb?useTimezone=true&amp;serverTimezone=UTC" /> <!--Schema-->
+			<property name="javax.persistence.jdbc.user" value="jao" /> <!-- Usuario Banco -->
+			<property name="javax.persistence.jdbc.password" value="jvps3000" /> <!-- Senha Banco -->
 			<!-- Configurações específicas do Hibernate -->
 			<property name="hibernate.dialect" 
 			value="org.hibernate.dialect.MySQL5InnoDBDialect" />
