@@ -46,4 +46,18 @@ function ValidaEmail(){
   	alert('Email incorreto');
 	obj.focus();
   }
+  
+  
+  
+  function igual(e){
+	  
+	  var senha1 = document.getElementByID("inputSenha");
+	  var senha2 = document.getElementByID("inputSenha2");
+	  if(senha1 === senha2){
+		  return true;
+	  }else{
+		  alert('Senha incorreta');
+		  return false;
+	  }
+  }
 }

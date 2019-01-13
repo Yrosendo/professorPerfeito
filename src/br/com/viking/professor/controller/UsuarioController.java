@@ -13,33 +13,17 @@ import br.com.viking.professor.util.Util;
 public class UsuarioController {
 
 	@RequestMapping("tela/add1")
-	public String adicionarUsuari() {
+	public String adicionarUsuario() {
 		return "tela/telaCadastro";
 	}
 	
-//Apagar request de teste
-	@RequestMapping("/usuario/add")
-	public String adicionarUsuario() {
-		return "usuario/incluirUsuario";
-	}
+
 	@RequestMapping("tela/index")
 	public String index() {
 		return "tela/telaInicial";
 	}
-//Apagar request de teste
-	@RequestMapping("/usuario/save")
-	public String save(Usuario usuario, @RequestParam("file") MultipartFile foto) {
-		
-		if (Util.fazerUploadImagem(foto)) {
-			usuario.setFoto(Util.obterMomentoAtual() + " - " + foto.getOriginalFilename());
-		}
-		UsuarioDao dao = new UsuarioDao();
-		dao.salvar(usuario);
-		return "usuario/incluirUsuarioSucesso";
-	}
-	
-	
-	@RequestMapping("/tela/save1")
+
+	@RequestMapping("/tela/save")
 	public String save1(Usuario usuario, @RequestParam("file") MultipartFile foto) {
 	
 		if (Util.fazerUploadImagem(foto)) {
@@ -55,6 +39,6 @@ public class UsuarioController {
 		
 		UsuarioDao dao = new UsuarioDao();
 		dao.salvar(usuario);
-		return "tela/telaInicial";
+		return "tela/telaCadastro";
 	}
 }

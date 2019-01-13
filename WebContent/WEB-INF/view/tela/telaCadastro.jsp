@@ -29,11 +29,15 @@
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/bootstrap/css/estilos1.css">
 
-<!-- JS do Cadastro -->
 
+<!-- Links Google -->
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="709243002314-i0pusjq95guihorvd92dmoqjiei4inrp.apps.googleusercontent.com">
 	
-		
-		
 <title>Professor Perfeito</title>
 
 </head>
@@ -44,6 +48,8 @@
 
 <br />
 <br />
+
+ 
 
 <form class="form-horizontal" action="save2" method="post">
 <fieldset>
@@ -67,8 +73,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="inputEmailPagSeguro">Email</label>  
   <div class="col-md-4">
-  <input id="inputEmailPagSeguro" name="emailPagSeguro" type="text" placeholder="exemplo@email.com" class="form-control" required="required"
-   />
+  <input id="inputEmailPagSeguro" name="emailPagSeguro" type="email" placeholder="exemplo@email.com" class="form-control" required="required"
+   onblur="ValidaEmail()"/>
     
   </div>
 </div>
@@ -82,14 +88,6 @@
   </div>
 </div>
 
-<!-- Password input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="inputSenha">Confirmação de Senha</label>
-  <div class="col-md-4">
-    <input id="inputSenha" name="senha" type="password" placeholder="Senha" class="form-control input-md" required="required" />
-    
-  </div>
-</div>
 
 <!-- Button -->
 <div class="form-group">
@@ -98,6 +96,11 @@
     <button type="submit" name="singlebutton" class="btn btn-primary">Cadastrar</button>
   </div>
 </div>
+
+<c:import  url="loginGoogle.jsp" />
+
+
+
 
 </fieldset>
 </form>
@@ -115,6 +118,8 @@
 	<script
 		src="<%=request.getContextPath()%>/resources/bootstrap/js/custom.js"></script>
 		
+		<!-- JS do Cadastro -->
+
 	<script src="<%=request.getContextPath()%>/resources/bootstrap/js/regrasNegocio.js"></script>		
 
 </body>
